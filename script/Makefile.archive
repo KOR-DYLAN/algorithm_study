@@ -1,0 +1,9 @@
+include .config
+include script/Makefile.toolchain
+include $(PROJECT_BASE)/objects.mk
+
+all: $(TARGET)
+
+%.a: $(obj)
+	@echo "[AR]        $@"
+	$(Q)$(AR) cr $@ $(obj)
